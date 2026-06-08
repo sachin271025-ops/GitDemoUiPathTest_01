@@ -76,7 +76,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Create a dictionary where key=country name and value=List of cities. Add a new city for US &amp; write all the cities from US. Remove a city from the list for UK &amp; write all the cities from UK. " DisplayName="Dictionary And Lists Demo" sap:VirtualizedContainerService.HintSize="1169,1375" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Create a dictionary where key=country name and value=List of cities. Add a new city for US &amp; write all the cities from US. Remove a city from the list for UK &amp; write all the cities from UK. " DisplayName="Dictionary And Lists Demo" sap:VirtualizedContainerService.HintSize="1169,1633" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(x:String))" Name="Cities" />
     </Sequence.Variables>
@@ -129,6 +129,23 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uasc:AppendItemToCollection>
+    <Sequence DisplayName="Cities India - Tier 1 (V2 only feature)" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uasc:BuildCollection x:TypeArguments="x:String" Items="{x:Null}" DisplayName="Build Collection" FirstItem="Bangalore" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="BuildCollection`1_5">
+        <uasc:BuildCollection.NextItems>
+          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+            <InArgument x:TypeArguments="x:String">Delhi</InArgument>
+            <InArgument x:TypeArguments="x:String">Mumbai</InArgument>
+            <InArgument x:TypeArguments="x:String">Chennai</InArgument>
+            <InArgument x:TypeArguments="x:String">Kolkata</InArgument>
+          </scg:List>
+        </uasc:BuildCollection.NextItems>
+      </uasc:BuildCollection>
+    </Sequence>
     <uasc:RemoveFromCollection x:TypeArguments="x:String" Index="{x:Null}" Collection="[Cities(&quot;UK&quot;)]" DisplayName="Remove London from UK Cities" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_2" Item="London" RemoveAllElements="False" Result="[Cities(&quot;UK&quot;)]" />
     <ui:LogMessage DisplayName="Print Resulting US and UK cities" sap:VirtualizedContainerService.HintSize="450,117" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;US Cities : &quot;+ String.Join(&quot;, &quot;,Cities(&quot;US&quot;)) + vbLf + &quot;and&quot; + vbLf + &quot;UK Cities : &quot;+ String.Join(&quot;, &quot;,Cities(&quot;UK&quot;))]" />
   </Sequence>
